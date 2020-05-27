@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>La sirena aguas</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="" class="navbar-brand">Empacadora la sirena</a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Lotes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="productos.html">Productos
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="estadolotes.html">Estado de lotes
+                <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ventas.html">Ventas</a>
+        </li>
+        <form class="form-inline my-2 my-lg-0">
+            <input type="search" id="search" class="form-control mr-sm-2" placeholder="No disponible" disabled>
+            <button class="btn btn-success my-2 my-sm-0" type="submit" disabled>
+                Buscar
+            </button>
+        </form>
+    </ul>
+</nav>
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form id="estado-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="c_estado">Codigo de estado</label>
+                                <input type="text" class="form-control" id="c_estado" name="c_estado" placeholder="123456" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="e_lote">Estado de lote</label>
+                                <select id="e_lote" name="cod_lote" class="form-control" required>
+                                    <option selected>Seleccionar...</option>
+                                    <option>Disponible</option>
+                                    <option>No Disponible</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="o_lote">Observacion</label>
+                                <input type="text" class="form-control" id="o_lote" name="o_lote" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="cod_lote">Codigo lote</label>
+                                <select id="cod_lote" name="cod_lote" class="form-control" required>
+                                    <option selected>Seleccionar...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="estado_btn" type="submit" class="btn btn-primary">Registrar estado</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card my-4" id="resultado">
+                <div class="card-body">
+                    <ul id="container"></ul>
+                </div>
+            </div>
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <td class="text-center">CODIGO ESTADO</td>
+                    <td class="text-center">ESTADO LOTE</td>
+                    <td class="text-center">OBSERVACION</td>
+                    <td class="text-center">COD LOTE</td>
+                    <td class="text-center">Opciones</td>
+                </tr>
+                </thead>
+                <tbody id="datosestado"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="js/App.js"></script>
+</body>
+</html>
